@@ -1,6 +1,6 @@
 const apiRouter = require("express").Router();
 const fs = require("fs");
-const uniqid = require("uniqid");
+const { v4: uuidv4 } = require("uuid");
 const util = require("util");
 
 const readFromDatabase = util.promisify(fs.readFile);
@@ -30,7 +30,7 @@ apiRouter.post("/api/notes", (req, res) => {
 
     if (title && text) {
         const note = {
-            id: uniqid,
+            id: uuidv4(),
             title,
             text,
         };
@@ -51,3 +51,5 @@ apiRouter.post("/api/notes", (req, res) => {
         res.json("Error posting note")
     }
 })
+
+module.exports = apiRouter;
