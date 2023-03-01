@@ -52,4 +52,18 @@ apiRouter.post("/api/notes", (req, res) => {
     }
 })
 
+apiRouter.delete("/api/notes/:id", (req, res) =>
+    readFromDatabase("./db/db.json").then((data) => {
+        let dbNotes = JSON.parse(data);
+
+        dbNotes = dbNotes.filter((note) => {
+            return note.id !== req.params.id;
+        })
+
+        writeToDatabase(".db/db.json", dbNotes);
+
+        res.json(JSON.parse(data));
+    })
+);
+
 module.exports = apiRouter;
