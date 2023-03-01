@@ -45,8 +45,8 @@ apiRouter.post("/api/notes", (req, res) => {
             status: "Complete",
             body: note,
         }
-
         res.json(response);
+
     } else {
         res.json("Error posting note")
     }
@@ -60,7 +60,7 @@ apiRouter.delete("/api/notes/:id", (req, res) =>
             return note.id !== req.params.id;
         })
 
-        writeToDatabase(".db/db.json", dbNotes);
+        writeToDatabase("./db/db.json", dbNotes);
 
         res.json(JSON.parse(data));
     })
