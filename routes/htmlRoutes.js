@@ -1,17 +1,17 @@
 const express = require("express");
-const app = express();
+const htmlRoutes = express();
 const path = require("path");
 
-app.get("/", (req, res) =>
+htmlRoutes.get("/", (req, res) =>
     res.sendFile(path.join(__dirname, "../public/index.html"))
 );
 
-app.get("/notes", (req, res) =>
+htmlRoutes.get("/notes", (req, res) =>
     res.sendFile(path.join(__dirname, "../public/notes.html"))
 );
 
-app.get("*", (req, res) =>
+htmlRoutes.get("*", (req, res) =>
     res.sendFile(path.join(__dirname, "../public/index.html"))
 );
 
-module.exports = app;
+module.exports = htmlRoutes;
