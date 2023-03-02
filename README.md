@@ -2,29 +2,29 @@
 
 ## Description 
 
-This is an application that stores notes. Write a note with a title and a body and save it to a database with a click. Then reference it from a list on the left side. You can also delete the note here. 
+This is an application that stores notes. Write a note with a title and a body and save it to a database with a click. Then reference it from a list on the left side. You can also delete the note here. The application starts up using Express.JS. Express is a node js web application framework that provides features for building web applications. I then depoloyed it to heroku.  The file server.js is the main page. It connects to the server and connects to the routes folder. The routes folder then connects to the public html folder and the api routes for writing and deleting a new note. This is seen here:
 
-<!-- [Video of Generated README](Need to Do This) -->
+![Screenshot](./images/server-file.png)
 
-I store the questions in an array. Each question is stored in an object. It is defined using a type, a message (the question), and a name. I first create a function that will use inquirer to prompt the questions. Then we will pass the responses or answers into a function to write the file. This function will pass the answers into a generate markdown javascript file. We take this information and use it to create the file. It will console log for use if it is suscessful. You can view this all below. 
+This code here is used for deleting a note from the page. 
 
-<!-- ![Screenshot](Need to Do This) -->
+![Screenshot](./images/delete-a-note.png)
 
 ## Installation
 
-Install npm via "npm init". Following this, you will need to install inquirer entering, "npm i inquirer@8.2.4". A folder named node_modules will populate. This shows proper steps are happening. Open the directory in the intergrated terminal or terminal you are using. Run the index.js file using node, i.e. "node index". Follow the prompts to beging the file generation. Once completed a file named "generated-readme.md" will appear. 
+Install npm via "npm i" in the command line. A folder named node_modules will populate as well as a package-lock.json. This shows proper steps are happening. Open the directory in the intergrated terminal or terminal you are using. Run the index.js file using node, i.e. "npm start". A notification will console log with success and a link to the server.  
 
 ## Usage 
 
-Once you have successfully installed the correct componenets you will be prompted with the series of questions when entering "node index". You must be in the correct file for this to work. Once the prompts have been completed, the "professional-README.md" file will be created. 
+First click on the "Get Started" button to be taken to the notes page. Once on the notes page, either select a previous note on the left to view or start a new note. To start a new note, enter a title and a body of the note. Then click the save icon in the top right to save the note. You can also press the + sign in the top left to open a new note. 
 
-## Test
+This can be used on a heroku deployed server here: 
 
-There is a professional-README.md file listed under the javascript folder in the assets sections. This is and example file that was created using the application. 
+<a href="https://shielded-island-42238.herokuapp.com/" target="_blank">Note Taker on Heroku</a>
 
 ## Credits
 
-Node.js, inquirer, UCB Starter Code
+Node.js, inquirer, express.js, Heroku, UCB Starter Code
 
 ## Contact Me
 
